@@ -17,11 +17,6 @@ export default class HomeScreen extends React.Component {
     header: null
   };
 
-  // async componentDidMount() {
-  //   const data = await API.get("sampleCloudApi", "/test");
-  //   console.log("data: ", data);
-  // }
-
   render() {
     return (
       <View style={styles.container}>

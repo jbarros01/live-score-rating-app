@@ -3,11 +3,14 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { AppLoading, Asset, Font, Icon, KeepAwake } from "expo";
 import { withAuthenticator } from "aws-amplify-react-native";
 import AppNavigator from "./navigation/AppNavigator";
-
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
+import AppSyncConfig from "./appsync-config";
 
-Amplify.configure(config);
+import { API, graphqlOperation } from "aws-amplify";
+
+Amplify.configure({ ...config, ...AppSyncConfig });
+
 if (__DEV__) {
   KeepAwake.activate();
 }
